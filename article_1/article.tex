@@ -1,0 +1,182 @@
+% --- Preamble compatible avec pdflatex.exe ---
+\documentclass[10pt, a4paper, twocolumn]{article}
+
+% --- Géométrie pour s'adapter au bi-colonne ---
+\usepackage[a4paper, columnsep=1.5em, top=2cm, bottom=2cm, left=1.8cm, right=1.8cm]{geometry}
+
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+
+% --- Packages de Style de Publication ---
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{abstract}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb} % ✅ Added for Greek symbols like α, β, γ
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{hyperref}
+
+% Correction des puces
+\setlist[itemize]{label=-}
+
+% --- En-tête et Pied de page ---
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[R]{Big Data et Prise de Décision}
+\fancyhead[L]{A. Kaoutar et A. Sara}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% --- Style des Sections ---
+\titleformat{\section}[block]{\centering\normalfont\large\bfseries\MakeUppercase}{\thesection.}{0.5em}{}
+\titlespacing{\section}{0pt}{10pt}{5pt}
+
+\titleformat{\subsection}[block]{\normalfont\normalsize\bfseries}{\thesubsection.}{0.5em}{}
+\titlespacing{\subsection}{0pt}{8pt}{3pt}
+
+% --- Style Abstract ---
+\renewcommand{\abstractnamefont}{\normalfont\normalsize\bfseries\MakeUppercase}
+\setlength{\absleftindent}{1.5cm}
+\setlength{\absrightindent}{1.5cm}
+
+\begin{document}
+
+\title{\vspace{-1.5cm}\textbf{\MakeUppercase{Le Big Data dans la prise de décision en entreprise: Apports, défis et perspectives}}}
+\author{Kaoutar Atouf \and Sara Ait Taleb}
+\date{}
+\maketitle
+
+\begin{abstract}
+Le Big Data représente aujourd’hui un levier stratégique majeur pour la compétitivité des entreprises. Grâce à la collecte, au stockage et à l’analyse massive de données, les organisations peuvent améliorer la qualité de leurs décisions et anticiper les tendances du marché. Cet article explore le rôle du Big Data dans le processus décisionnel, en mettant l’accent sur ses apports, ses limites et les conditions nécessaires à sa mise en œuvre efficace. L’étude met en lumière la transformation des modèles décisionnels traditionnels vers une approche plus analytique et prédictive, comme l'ont souligné Davenport et Dyché \cite{davenport2014}. Enfin, elle souligne les défis liés à la gouvernance des données, à la sécurité et à la compétence des acteurs impliqués \cite{laclau2020}.
+\end{abstract}
+
+\section{Introduction}
+La révolution numérique a profondément modifié la manière dont les entreprises prennent leurs décisions. L’émergence du Big Data, défini comme l’ensemble des données massives, variées et générées à grande vitesse (les fameux 3V), offre de nouvelles opportunités pour comprendre le comportement des clients, optimiser les processus internes et innover. Cependant, malgré son potentiel, l’exploitation du Big Data pose de nombreux défis : volume et qualité des données, compétences analytiques, coûts d’infrastructure et enjeux éthiques \cite{laclau2020}.
+
+La problématique de cet article peut se formuler ainsi : comment le Big Data influence-t-il la prise de décision en entreprise et quelles sont les conditions de sa réussite ? L’objectif est d’analyser les apports du Big Data au processus décisionnel, d’identifier les obstacles rencontrés et de proposer des pistes d’amélioration pour une stratégie efficace.
+
+\section{Méthodologie et Analyse}
+
+\subsection{Le Big Data comme outil stratégique de décision}
+Le Big Data permet aux entreprises de transformer leur processus décisionnel en s’appuyant sur des données massives et variées. Ces données suivent un flux allant de la collecte à la prise de décision, comme illustré à la Figure~\ref{fig:Processus_décisionnel}. Les outils d’analyse prédictive, tels que les algorithmes de machine learning, facilitent la détection de tendances et la simulation de scénarios décisionnels.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth , height=6cm]{Processus_décisionnel.png}
+\caption{Processus décisionnel assisté par le Big Data (Data Pipeline)}
+\label{fig:Processus_décisionnel}
+\end{figure}
+
+\subsection{Transformation du processus décisionnel}
+Traditionnellement, les décisions reposaient sur l’intuition et l’expérience des managers. Aujourd’hui, elles s’appuient davantage sur des données quantitatives issues de multiples sources (réseaux sociaux, capteurs IoT, transactions, etc.). La Figure~\ref{fig:Principales_sources_de_données} illustre les principales sources. Ces sources sont essentielles pour obtenir une vision complète du marché \cite{davenport2014}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth , height=6cm]{Principales_sources_de_données.png}
+\caption{Principales sources de données massives pour la prise de décision}
+\label{fig:Principales_sources_de_données}
+\end{figure}
+
+\subsection{Les défis de l’intégration du Big Data}
+Malgré ses avantages, l’intégration du Big Data dans la prise de décision rencontre plusieurs obstacles :
+
+\begin{itemize}
+\item Gouvernance des données : nécessité d’assurer la qualité, la sécurité et la conformité réglementaire (RGPD).
+\item Compétences : manque de data scientists et de managers formés à l’interprétation des analyses.
+\item Infrastructure : coût élevé des systèmes de stockage et d’analyse.
+\end{itemize}
+
+\section{Résultats et Discussion}
+Les entreprises qui intègrent efficacement le Big Data observent une amélioration significative de la performance décisionnelle. Une étude de McKinsey (2023) montre que les organisations data-driven sont 23\% plus rentables que leurs concurrentes \cite{mckinsey2023}. Comme illustré à la Table~\ref{tab:comparaison}, cette différence se traduit sur plusieurs critères.
+
+\begin{table}[H]
+\centering
+\caption{Comparaison entre entreprises traditionnelles et data-driven}
+\label{tab:comparaison}
+\begin{tabular}{p{0.28\columnwidth} p{0.3\columnwidth} p{0.3\columnwidth}}
+\toprule
+Critère & Entreprise traditionnelle & Entreprise data-driven \\
+\midrule
+Prise de décision & Basée sur l’expérience & Basée sur l’analyse des données \\
+Réactivité & Lente & Rapide et prédictive \\
+Sources d’information & Internes & Internes et externes (Big Data) \\
+Rentabilité & Moyenne & +23\% (selon \cite{mckinsey2023}) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Illustration mathématique de la performance}
+La performance décisionnelle $P$ peut être modélisée comme une fonction des facteurs clés de succès de l'analyse de données :
+\begin{equation}
+\label{eq:performance}
+P = \alpha \cdot D_q + \beta \cdot A_c + \gamma \cdot G_d
+\end{equation}
+où :
+\begin{itemize}
+  \item $D_q$ : qualité des données,
+  \item $A_c$ : capacité analytique,
+  \item $G_d$ : gouvernance des données,
+  \item $\alpha$, $\beta$, $\gamma$ : coefficients d’influence pondérant l’importance de chaque facteur.
+\end{itemize}
+
+\subsection{Algorithme de décision basé sur le Big Data}
+La prise de décision est un processus itératif, formalisé ici par l'Algorithme~\ref{alg:data_driven_decision}.
+
+\begin{algorithm}[H]
+\caption{Prise de décision data-driven (Adapté de \cite{davenport2014})}
+\label{alg:data_driven_decision}
+\begin{algorithmic}[1]
+\State Collecter les données des différentes sources
+\State Nettoyer et structurer les données
+\State Appliquer les algorithmes d’analyse prédictive (Machine Learning)
+\State Générer des recommandations
+\If{la recommandation satisfait les objectifs stratégiques}
+\State Valider la décision
+\Else
+\State Ajuster les paramètres et ré-analyser
+\EndIf
+\State Mettre en place un système de mesure des résultats
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Avantages et Limites du Big Data}
+L'analyse des avantages et limites montre la dualité de cette technologie (voir Tableau~\ref{tab:avantages_limites}).
+
+\begin{table}[H]
+\centering
+\caption{Avantages et limites du Big Data en entreprise}
+\label{tab:avantages_limites}
+\begin{tabular}{p{0.45\columnwidth} p{0.45\columnwidth}}
+\toprule
+Avantages & Limites \\
+\midrule
+Amélioration de la prise de décision & Coût élevé des infrastructures \\
+Anticipation des tendances du marché & Besoin de compétences spécialisées \\
+Personnalisation des offres & Problèmes de qualité des données \\
+Réduction des risques et fraude & Questions éthiques et de confidentialité \cite{laclau2020} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Conclusion}
+L'intégration du Big Data a transformé la prise de décision en entreprise, la faisant passer d'un modèle basé sur l'intuition à une approche analytique, prédictive et rapide. Les entreprises data-driven démontrent un avantage concurrentiel clair, notamment en termes de rentabilité et de réactivité.
+
+Cependant, la réussite d'une telle stratégie dépend de la mise en place d'une gouvernance rigoureuse des données et du développement de compétences analytiques internes.
+
+\subsection{Perspectives}
+Les futures recherches pourraient se concentrer sur l'optimisation des modèles de formation pour les managers et sur l'étude des cadres réglementaires spécifiques (comme le RGPD) afin de proposer des solutions respectueuses de la vie privée. L'évolution vers l'Intelligence Artificielle et l'apprentissage automatique continuera de renforcer le rôle du Big Data dans la stratégie d'entreprise.
+
+\addcontentsline{toc}{section}{Références Bibliographiques}
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
